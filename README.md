@@ -5,6 +5,7 @@
 - Word vectors  
 - Vectors from annotated discrete properties
 - Distributional signal / Distributional Semantics 
+- self supervised
 
 **Linear Algebra Concepts**  
 - dependent and independent vectors  
@@ -57,6 +58,25 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - Also, such high dimensions sparse vector representations doesn't work well with modern neural networks that tend to operate on dense vectors.
     - Human ideas of optimal text representations tends to underperform when dealing with large amounts of data.
 
+**Distributional Semantics**  
+The key idea of distributional semantics is that words that occur in similar contexts tend to have similar meanings.  
+Example:  
+    - Consider two words i.e. `tea` and `coffee`.
+    - Let us suppose word `tea` is present in context such as _drank, the, pot, kettle, bad, delicious, oolong, hot, steam,.....,_.  
+    - Since `tea` is similar to `coffee`, hence both of them will have similar distributions of context/surrounding words.  
+- In distributional semantics, words are represented as vectors in a high dimensional space, where dimension corresponds to a feature or property of the words.  
+- The vectors representation of words are computed using two approach i.e.  
+    1.`Frequency based Embedding`   
+    - BOW, TF-IDF, Co-Occurence Vector  
+
+    2.`Prediction based Embedding`  
+    - Word2Vec(CBOW, Skip-Gram), 
+    - Glove (Global Vectors for Word Representation)  
+    - FastText
+        - extension of skip-gram model. Handle out-of-vocabulary words effectively
+    - ELMO (Embeddings from Language Models)  
+    - BERT Embedding (Bidirectional Encoder Representation from Transformers)  
+      
 **Word Vectors**  
 - word vectors are distributed representations
 - Also called as word embeddings or (neural word representations).
