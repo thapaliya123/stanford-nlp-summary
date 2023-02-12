@@ -13,3 +13,7 @@
 - Basis Vector  
     - A vector basis of a vector space is defined as a subset of vectors in that are linearly independent and span.  
 
+
+**Summary Notes**  
+- [week 1](week1/README.md)
+
