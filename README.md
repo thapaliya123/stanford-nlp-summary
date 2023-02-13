@@ -1,6 +1,10 @@
 # standford-nlp-summary
 
-**nlp terms**  
+**NLP tools**  
+- [Embedding Projector](https://projector.tensorflow.org/) 
+- [Word2Vec Visualization](https://ronxin.github.io/wevi/)
+
+**NLP terms**  
 - WordNet  
 - Word vectors  
 - Vectors from annotated discrete properties
@@ -17,3 +21,9 @@
 **Summary Notes**  
 - [week 1](week1/README.md)
 
+
+## References 
+- https://jalammar.github.io/illustrated-word2vec/
+- https://web.stanford.edu/class/cs224n/
+- [Word2Vec paper](https://arxiv.org/abs/1301.3781)
+- 

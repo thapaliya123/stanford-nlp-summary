@@ -67,6 +67,9 @@ Example:
 - Also called as word embeddings or (neural word representations).
 - It's a basic problems in NLP.
 
+**word2vec**
+- Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
+- 
 
 - **objective functions**
     - Likelihood in converted to Log likelihood because, 
