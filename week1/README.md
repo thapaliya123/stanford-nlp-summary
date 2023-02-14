@@ -69,7 +69,14 @@ Example:
 
 **word2vec**
 - Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
-- 
+- **Architecture (Skip-Gram)**  
+    - `Input Layer`    
+        - The input layer takes the one-hot representation of the center word and passes it to a hidden layer.
+    - `Hidden Layer`  
+        - The hidden layer receives the input from the input layer and performs matrix multiplication with the weight matrix U.
+        - Then output is passed through the activation function to obtain the embedding representation of the center word.
+    - `Output Layer`  
+        - The output layer receives the embedding representation of the center word and performs a matrix multiplication with the weight matrix V. The result of this multiplication is then passed through a softmax activation to obtain the predicted context words.
 
 - **objective functions**
     - Likelihood in converted to Log likelihood because, 
