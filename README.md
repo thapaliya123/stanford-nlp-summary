@@ -26,4 +26,3 @@
 - https://jalammar.github.io/illustrated-word2vec/
 - https://web.stanford.edu/class/cs224n/
 - [Word2Vec paper](https://arxiv.org/abs/1301.3781)
-- 

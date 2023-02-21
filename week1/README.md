@@ -11,7 +11,7 @@
     - It's not in priorities in this course (i.e. in CS224n)
 
 ## NLP progress
-Speaker discussed about recent progress in NLP showing real world examples that is used in a daily basis.
+>>Speaker discussed about recent progress in NLP showing real world examples that is used in a daily basis.
 
 1. **Google Translate**
     - a machine translation service developed by Google that can translate text, speech, images, and web pages between any combination of over 100 languages.
