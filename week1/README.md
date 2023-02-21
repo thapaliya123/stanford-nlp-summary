@@ -1,4 +1,4 @@
-**Applications of NLP**
+ ## Applications of NLP
 - Machine Translation
     - translates from one language to another.
     - It is Ubiquitous
@@ -9,6 +9,20 @@
 - Speech to text
     - Automatic transcriptions of spoken or signed language (audio, or video) to textual representations.
     - It's not in priorities in this course (i.e. in CS224n)
+
+## NLP progress
+Speaker discussed about recent progress in NLP showing real world examples that is used in a daily basis.
+
+1. **Google Translate**
+    - a machine translation service developed by Google that can translate text, speech, images, and web pages between any combination of over 100 languages.
+
+2. **GPT-3**
+    - GPT-3 (Generative pretrained Transformer 3) is a `SOTA` 3rd generation language model developed by OpenAI.
+    - It is trained on a large corpus of text data (including books, articles, and web pages) and can generate high-quality natural text in response to prompt.
+    - It has wide range of application such as text completion, summarization, translation, and question-answering with very few examples or no explicit training for a specific task.
+
+3. **ChatGPT**  
+    
 
 **One hot vectors**  
 - One of the simplest ways to represent words is to consider them as independent and unrelated entities. 
