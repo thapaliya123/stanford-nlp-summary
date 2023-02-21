@@ -20,11 +20,34 @@ Speaker discussed about recent progress in NLP showing real world examples that 
     - GPT-3 (Generative pretrained Transformer 3) is a `SOTA` 3rd generation language model developed by OpenAI.
     - It is trained on a large corpus of text data (including books, articles, and web pages) and can generate high-quality natural text in response to prompt.
     - It has wide range of application such as text completion, summarization, translation, and question-answering with very few examples or no explicit training for a specific task.
+    - `FINE TUNE on sample data:`
 
-3. **ChatGPT**  
+    ```
+    **Train Step: FINE TUNE on custom train data (example shown below)**
+    train_data1: I broke the window.
+    label1: What did I break?  
+
+    train_data2: I gracefully saved the day.
+    label2: What did I gracefully save? and so on...
     
+    **Test Step: Generate prediction for prompt (using trained model)**
 
-**One hot vectors**  
+    test_prompt1: I have John flowers.
+    model_output1: Who did I give flowers do?
+
+    test_prompt2: I gave her a rose and a guitar.
+    model_output2: Who did I give a rose and a guitar to?
+
+    ```
+3. **ChatGPT**  
+    - ChatGPT is a variant of GPT family of language models, developed by OpenAI which is trained on a large dataset of conversational data, and is able to generate responses that are appropriate to the context and tone of the conversation.
+    - In contrast to GPT-3, ChatGPT is designed specifically for use in chatbots and conversational agents, whereas GPT-3 is more general purpose language model that can be used for a wide range of natural language processing tasks and it is not specifically designed for conversation.
+    - `Chat GPT interface`: https://chat.openai.com/chat
+    - <img src='images/1.png' width=400>
+
+
+    
+## One hot vectors 
 - One of the simplest ways to represent words is to consider them as independent and unrelated entities. 
 - This can be achieved by creating a set of unique words from a corpus, for example: {..., chatgpt, ..., openai, ...}. 
 - This approach provides a single representation for each word regardless of the context in which it is used.
@@ -37,7 +60,7 @@ However, the biggest drawback of this type of word representation is that it doe
 
 In conclusion, while one-hot vector representation of words can be useful in processing textual data, it fails to capture the semantic relationships between words. This lack of similarity information is a major limitation of this type of word representation.
 
-**Vectors from annotated discrete properties**
+## Vectors from annotated discrete properties
 - It refers to the representation of entities or objects (words in our scenario) as numerical vectors based on their annotated discrete properties or features.
 - The objective is to capture the important information about each entity in a numerical format, so that mathematical operations () can be performed on them.
     - Example:
@@ -57,7 +80,7 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - Also, such high dimensions sparse vector representations doesn't work well with modern neural networks that tend to operate on dense vectors.
     - Human ideas of optimal text representations tends to underperform when dealing with large amounts of data.
 
-**Distributional Semantics**  
+## Distributional Semantics
 The key idea of distributional semantics is that words that occur in similar contexts tend to have similar meanings.  
 Example:  
     - Consider two words i.e. `tea` and `coffee`.
@@ -76,12 +99,12 @@ Example:
     - ELMO (Embeddings from Language Models)  
     - BERT Embedding (Bidirectional Encoder Representation from Transformers)  
       
-**Word Vectors**  
+## Word Vectors
 - word vectors are distributed representations
 - Also called as word embeddings or (neural word representations).
 - It's a basic problems in NLP.
 
-**word2vec**
+## word2vec
 - Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
 - **Architecture (Skip-Gram)**  
     - `Input Layer`    
