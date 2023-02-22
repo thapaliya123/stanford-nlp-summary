@@ -11,11 +11,12 @@
     - It's not in priorities in this course (i.e. in CS224n)
 
 ## NLP progress
->>Speaker discussed about recent progress in NLP showing real world examples that is used in a daily basis.
+> Speaker discussed about recent progress in NLP showing real world examples that is used in a daily basis.
 
 1. **Google Translate**
     - a machine translation service developed by Google that can translate text, speech, images, and web pages between any combination of over 100 languages.
-
+    - `Example:`  
+    <img src='images/2.png' width=400>
 2. **GPT-3**
     - GPT-3 (Generative pretrained Transformer 3) is a `SOTA` 3rd generation language model developed by OpenAI.
     - It is trained on a large corpus of text data (including books, articles, and web pages) and can generate high-quality natural text in response to prompt.
@@ -43,11 +44,12 @@
     - ChatGPT is a variant of GPT family of language models, developed by OpenAI which is trained on a large dataset of conversational data, and is able to generate responses that are appropriate to the context and tone of the conversation.
     - In contrast to GPT-3, ChatGPT is designed specifically for use in chatbots and conversational agents, whereas GPT-3 is more general purpose language model that can be used for a wide range of natural language processing tasks and it is not specifically designed for conversation.
     - `Chat GPT interface`: https://chat.openai.com/chat
-    - <img src='images/1.png' width=400>
+    - <img src='images/1.png' width=500>
 
 
     
 ## One hot vectors 
+> Assumption: _`Words are independent and unrelated entities`_
 - One of the simplest ways to represent words is to consider them as independent and unrelated entities. 
 - This can be achieved by creating a set of unique words from a corpus, for example: {..., chatgpt, ..., openai, ...}. 
 - This approach provides a single representation for each word regardless of the context in which it is used.
@@ -55,7 +57,7 @@
     - This method assigns a unique binary vector to each word in a dictionary, where each element in the vector corresponds to a word in the dictionary.
     - The advantage of this representation is that it can be easily processed by a computer, as it transforms textual data into a numerical form.
 
-However, the biggest drawback of this type of word representation is that it does not capture the similarity information between words i.e.
+However, the biggest `drawback` of this type of word representation is that it does not capture the similarity information between words i.e.
  - The dot product of two one-hot vectors representing two different words will always be zero, for example, let v and w be two one-hot vector representations of words, then their dot product will be 0, i.e., v.w = 0 = w.v.
 
 In conclusion, while one-hot vector representation of words can be useful in processing textual data, it fails to capture the semantic relationships between words. This lack of similarity information is a major limitation of this type of word representation.
@@ -81,13 +83,24 @@ In conclusion, while one-hot vector representation of words can be useful in pro
     - Human ideas of optimal text representations tends to underperform when dealing with large amounts of data.
 
 ## Distributional Semantics
-The key idea of distributional semantics is that words that occur in similar contexts tend to have similar meanings.  
-Example:  
+>The key idea of distributional semantics is that words that occur in similar contexts tend to have similar meanings.   
+
+- Example:  
     - Consider two words i.e. `tea` and `coffee`.
     - Let us suppose word `tea` is present in context such as _drank, the, pot, kettle, bad, delicious, oolong, hot, steam,.....,_.  
-    - Since `tea` is similar to `coffee`, hence both of them will have similar distributions of context/surrounding words.  
+    - Since `tea` is similar to `coffee`, hence both of them will have similar distributions of context/surrounding words.
+    - For such similar words, set of intersection of their context words will be high.  
 - In distributional semantics, words are represented as vectors in a high dimensional space, where dimension corresponds to a feature or property of the words.  
-- The vectors representation of words are computed using two approach i.e.  
+      
+## Word Vectors
+- word vectors are distributed representations
+- Also called as word embeddings or (neural word representations).
+- Word vectors are basically a dense vector representation of words, where each components of vector represent some sort of discrete properties asscociated with words with semantic meaning.
+- **Comparison with One hot Vector**  
+    - As discussed above, One hot Encoding assumes words has no semantic meaning, where as word vectors carries semantic meaning.
+    - One hot Vector is dependent on Vocab Size i.e. as Vocab Size increases the dimension of One hot Vector also increases and leads to Sparse Vector, whereas Word Vectors are independent with Size of Vocabulary, and number of dimensions can be tuned as per requirements leading to dense vector.
+- **Approaches to Word Vectors Computation**    
+
     1.`Frequency based Embedding`   
     - BOW, TF-IDF, Co-Occurence Vector  
 
@@ -98,11 +111,9 @@ Example:
         - extension of skip-gram model. Handle out-of-vocabulary words effectively
     - ELMO (Embeddings from Language Models)  
     - BERT Embedding (Bidirectional Encoder Representation from Transformers)  
-      
-## Word Vectors
-- word vectors are distributed representations
-- Also called as word embeddings or (neural word representations).
-- It's a basic problems in NLP.
+
+- **Example:**   
+   - 
 
 ## word2vec
 - Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
