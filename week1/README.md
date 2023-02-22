@@ -96,9 +96,10 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - word vectors are distributed representations
 - Also called as word embeddings or (neural word representations).
 - Word vectors are basically a dense vector representation of words, where each components of vector represent some sort of discrete properties asscociated with words with semantic meaning.
+- Common dimension of word vectors are: 50, 100, 200, 300  
 - **Comparison with One hot Vector**  
     - As discussed above, One hot Encoding assumes words has no semantic meaning, where as word vectors carries semantic meaning.
-    - One hot Vector is dependent on Vocab Size i.e. as Vocab Size increases the dimension of One hot Vector also increases and leads to Sparse Vector, whereas Word Vectors are independent with Size of Vocabulary, and number of dimensions can be tuned as per requirements leading to dense vector.
+    - One hot Vector is dependent on Vocab Size i.e. as Vocab Size increases the dimension of  One hot Vector also increases and leads to Sparse Vector, whereas Word Vectors are independent with Size of Vocabulary, and number of dimensions can be tuned as per requirements leading to dense vector.
 - **Approaches to Word Vectors Computation**    
 
     1.`Frequency based Embedding`   
@@ -113,7 +114,23 @@ In conclusion, while one-hot vector representation of words can be useful in pro
     - BERT Embedding (Bidirectional Encoder Representation from Transformers)  
 
 - **Example:**   
-   - 
+   - Let us consider we want word vector for words: `man`, `woman`, `king`, `queen`.
+   - Assume we will use word vector with 4 dimension where,
+        - 1st dimension = Gender
+        - 2nd dimension = Royal
+        - 3rd dimension = Age (adult?)
+        - 4th dimension = Food
+    
+    -   |      Words/Features          | Gender | Royal | Age (adult?) | Food |
+        | -------------- | ------ | ----- | ------------ | ---- |
+        | Man      | -1     | 0.01  | 0.03         | 0.09 |
+        | Woman    | 1      | 0.02  | 0.02         | 0.01 |
+        | King     | -0.96  | 0.92  | 0.7          | 0.02 |
+        | Queen    | 0.98   | 0.95  | 0.69         | 0.01 |
+    - In above table, each rows represent words, and each column represents component/feature of word vector.
+    - Using T-SNE algorithm we can visualize above word vectors by projecting 4D vectors to 3D or 2D.
+        - You can use [Embedding Projector](https://projector.tensorflow.org/) for ease.
+
 
 ## word2vec
 - Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
