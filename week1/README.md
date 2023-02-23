@@ -133,7 +133,8 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 
 
 ## word2vec
-- Word2Vec algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.
+- Word2Vec (_Mikolov et al. 2013_) algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.  
+- In the process of word vector computation, Word2Vec includes two different algorithms i.e. `CBOW` and `Skip-Gram`.
 - **Architecture (Skip-Gram)**  
     - `Input Layer`    
         - The input layer takes the one-hot representation of the center word and passes it to a hidden layer.
