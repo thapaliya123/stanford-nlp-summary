@@ -47,7 +47,22 @@
     - <img src='images/1.png' width=500>
 
 
-    
+## Word Embeddings
+> Before diving into NLP word, it is important to understand how we represent textual data which is not understood by the modern computers  . 
+
+- Embeddings methods convert symbolic representation like words, emojis, and other features into meaningful numbers, capturing the underlying semantic relations between them.
+- Word embeddings are numerical representation for words that capture their meaning, semantic relationships, and the different types of context they are used in, This enables computers to handle text data and perform various natural language processing tasks (such as text classification, text summarization, Question answering, Named Entity Recognition, etc).
+- **Need of Word Embeddings**  
+    - Dealing with textual data is problematic, since our computers, machine learning architectures and deep learning architectures cannot process strings or plain text in their raw form. They require numbers as inputs to perform any sort of job, either classification, regression, etc. Word embeddings are therefore necessary to best numerically represent textural input. 
+
+- **Exmple**
+    - Let us suppose we have task to compute similarity between emojis. Since computer does not understand emojis symbols directly, then how do we make computer understand about emojis? The answer is we construct emojis embedding, However there may be other approaches as well.
+    - Suppose we choose four features `[spring, summer, autumn, winter]` to represent an emoji as a vector with 4 values i.e.
+    - <img src='images/3.png' width='400'>
+    - According to above matrix, we can embed each emoji according to the features they posses. It means, Tree emoji is represented by Spring, Summer, and Autumn, so on for others.
+    - <img src='images/4.png' width='300'>
+    - Now we can compute emojis similarity (say using Cosine) using the generated emojis vector shown above.
+
 ## One hot vectors 
 > Assumption: _`Words are independent and unrelated entities`_
 - One of the simplest ways to represent words is to consider them as independent and unrelated entities. 
