@@ -149,6 +149,7 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 
 ## word2vec
 - Word2Vec (_Mikolov et al. 2013_) algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.  
+- Word2Vec maxmimizes objective function by putting similar words nearby in space. 
 - In the process of word vector computation, Word2Vec includes two different algorithms i.e. `CBOW` and `Skip-Gram`.
 - **Architecture (Skip-Gram)**  
     - `Input Layer`    
@@ -172,4 +173,8 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 
 - softmax is a way to convert number to probabilites
     - we use exp because to convert any negative numbers to positive since probability can't be negative.
-    - 
+    
+- **Optimization: Gradient Descent**  
+- `Recall:`
+    - Gradient Descent is an algorithm to minimize cost function J(&theta;) by changing &theta;
+    - From current value of &theta;, calculate gradient of J(&theta;), then take small step in the direction of negative gradient, and Repeat until optimial parameters &theta;.
