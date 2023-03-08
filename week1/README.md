@@ -174,7 +174,26 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - softmax is a way to convert number to probabilites
     - we use exp because to convert any negative numbers to positive since probability can't be negative.
     
-- **Optimization: Gradient Descent**  
-- `Recall:`
-    - Gradient Descent is an algorithm to minimize cost function J(&theta;) by changing &theta;
-    - From current value of &theta;, calculate gradient of J(&theta;), then take small step in the direction of negative gradient, and Repeat until optimial parameters &theta;.
+- **Optimization: Gradient Descent**   
+    - `Recall:`
+        - Gradient Descent is an algorithm to minimize cost function J(&theta;) by changing &theta;
+        - From current value of &theta;, calculate gradient of J(&theta;), then take small step in the direction of negative gradient, and Repeat until optimial parameters &theta;.
+        - <img src='images/5.png' width='400'>
+        - This is the example when our objective function is convex, but in practice our objective function may not be convex.
+
+    - Update RULE:
+        - Update equation (in matrix notation)        
+            - _&theta;(new)_ = _&theta;(old)_ - &alpha;&nabla;<sub>&theta;</sub>J(&theta;)
+                - here, 
+                    - &alpha; is learning rate or step size.
+                    - &nabla;<sub>&theta;</sub>J(&theta;) is a gradient vectors obtained by taking gradients of cost function w.r.t parameters &theta;
+        - Update equation (for single parameter)    
+            - _&theta;<sub>j</sub><sup>new</sup>_ = _&theta;<sub>j</sub><sup>old</sup>_ - _&alpha; * ∂/∂x<sub>i</sub> J(&theta;)_
+
+        - Pseudocode
+
+            ```
+            while True:
+                theta_grad = evaluate_gradient(J, corpus, theta)  
+                theta = theta - alpha * theta_grad
+            ```
