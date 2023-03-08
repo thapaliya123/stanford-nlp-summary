@@ -1,4 +1,5 @@
 # standford-nlp-summary
+> Includes summary and assignments solution of [Stanford cs224n NLP with Deep Learning](https://web.stanford.edu/class/cs224n/).
 
 **NLP tools**  
 - [Embedding Projector](https://projector.tensorflow.org/) 
