@@ -151,6 +151,11 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - Word2Vec (_Mikolov et al. 2013_) algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.  
 - Word2Vec maxmimizes objective function by putting similar words nearby in space. 
 - In the process of word vector computation, Word2Vec includes two different algorithms i.e. `CBOW` and `Skip-Gram`.
+- **Key points**
+    - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
+    - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
+
+    
 - **Architecture (Skip-Gram)**  
     - `Input Layer`    
         - The input layer takes the one-hot representation of the center word and passes it to a hidden layer.
