@@ -154,6 +154,7 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - **Key points**
     - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
     - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
+    - The training objective of Word2Vec(Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
 
     
 - **Architecture (Skip-Gram)**  
