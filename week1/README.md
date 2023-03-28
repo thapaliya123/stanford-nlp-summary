@@ -154,13 +154,34 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - **Key points**
     - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
     - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
-    - The training objective of Word2Vec(Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
+    - According to author, there are two models for Word2Vec i.e. CBOW and Skip-Gram. Skip-Gram model predicts context words given a center word, CBOW model predicts a center word given context words.
+    - `Skip-Gram:`
+        - Works well with small amount of the training data.
+        - Represents well even rare words or phrases.
+        - High computational cost to train.
+    - `CBOW:`
+        - Faster to train than the Skip-Gram model. 
+        - Has better accuracy for the frequent words.
+        - CBOW model is good choice if training time is big concern, and you have enough training data to overcome the issue of predicting infrequent words.
+
+    - The training objective of Word2Vec (Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
     - For optimization, Word2Vec assume `stochastic gradient descent` which means for each training sample (center word) <i>w<sup>(t)</sup></i> in the corpus of `T` words , one update is made to the weight matrix say(&theta;)
         - `cost function for stochastic gradient descent`
         - <img src='images/6.png' width=300>
         - `cost function for batch gradient descent`
         - <img src='images/7.png' width=300>
     - Stochastic gradient descent is preferred over batch gradient descent due to its high computational cost. Since in batch gradient descent one single weight update required processing of the whole corpus, This means computational cost directly proportional to the corpus length.
+    - One of the applications of Word2Vec algorithms is to solve `analgoy tasks`.
+        - Let say we have three words i.e. `nepal`, `capital`, `kathmandu`
+        - Assume, 
+            - vec('nepal') = [0.4, 0.6, 0.2]
+            - vec('capital') = [0.3, 0.5, 0.1]
+            - vec('kathmandu') = [0.6, 0.9, 0.3]
+        - Analgoy, `nepal + capital == kathmandu`
+            - vec('nepal') + vec('capital') = [0.4, 0.6, 0.2] + [0.3, 0.5, 0.1] = [0.7, 1.1, 0.3]
+        - Cosine similarity,
+            - cos(vec('kathmandu'), [0.7, 1.1, 0.3]) = 0.998
+        - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
      
 
     
