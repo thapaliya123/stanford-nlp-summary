@@ -155,6 +155,13 @@ In conclusion, while one-hot vector representation of words can be useful in pro
     - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
     - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
     - The training objective of Word2Vec(Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
+    - For optimization, Word2Vec assume `stochastic gradient descent` which means for each training sample (center word) <i>w<sup>(t)</sup></i> in the corpus of `T` words , one update is made to the weight matrix say(&theta;)
+        - `cost function for stochastic gradient descent`
+        - <img src='images/6.png' width=300>
+        - `cost function for batch gradient descent`
+        - <img src='images/7.png' width=300>
+    - Stochastic gradient descent is preferred over batch gradient descent due to its high computational cost. Since in batch gradient descent one single weight update required processing of the whole corpus, This means computational cost directly proportional to the corpus length.
+     
 
     
 - **Architecture (Skip-Gram)**  
