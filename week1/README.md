@@ -151,40 +151,15 @@ In conclusion, while one-hot vector representation of words can be useful in pro
 - Word2Vec (_Mikolov et al. 2013_) algorithm works on the idea of Distributional Semantics i.e. the word meaning can be understand by looking at the context it is present.  
 - Word2Vec maxmimizes objective function by putting similar words nearby in space. 
 - In the process of word vector computation, Word2Vec includes two different algorithms i.e. `CBOW` and `Skip-Gram`.
-- **Key points**
-    - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
-    - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
-    - According to author, there are two models for Word2Vec i.e. CBOW and Skip-Gram. Skip-Gram model predicts context words given a center word, CBOW model predicts a center word given context words.
-    - `Skip-Gram:`
+- `Skip-Gram:`
         - Works well with small amount of the training data.
         - Represents well even rare words or phrases.
         - High computational cost to train.
-    - `CBOW:`
-        - Faster to train than the Skip-Gram model. 
-        - Has better accuracy for the frequent words.
-        - CBOW model is good choice if training time is big concern, and you have enough training data to overcome the issue of predicting infrequent words.
+- `CBOW:`
+    - Faster to train than the Skip-Gram model. 
+    - Has better accuracy for the frequent words.
+    - CBOW model is good choice if training time is big concern, and you have enough training data to overcome the issue of predicting infrequent words.
 
-    - The training objective of Word2Vec (Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
-    - For optimization, Word2Vec assume `stochastic gradient descent` which means for each training sample (center word) <i>w<sup>(t)</sup></i> in the corpus of `T` words , one update is made to the weight matrix say(&theta;)
-        - `cost function for stochastic gradient descent`
-        - <img src='images/6.png' width=300>
-        - `cost function for batch gradient descent`
-        - <img src='images/7.png' width=300>
-    - Stochastic gradient descent is preferred over batch gradient descent due to its high computational cost. Since in batch gradient descent one single weight update required processing of the whole corpus, This means computational cost directly proportional to the corpus length.
-    - One of the applications of Word2Vec algorithms is to solve `analgoy tasks`.
-        - Let say we have three words i.e. `nepal`, `capital`, `kathmandu`
-        - Assume, 
-            - vec('nepal') = [0.4, 0.6, 0.2]
-            - vec('capital') = [0.3, 0.5, 0.1]
-            - vec('kathmandu') = [0.6, 0.9, 0.3]
-        - Analgoy, `nepal + capital == kathmandu`
-            - vec('nepal') + vec('capital') = [0.4, 0.6, 0.2] + [0.3, 0.5, 0.1] = [0.7, 1.1, 0.3]
-        - Cosine similarity,
-            - cos(vec('kathmandu'), [0.7, 1.1, 0.3]) = 0.998
-        - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
-     
-
-    
 - **Architecture (Skip-Gram)**  
     - `Input Layer`    
         - The input layer takes the one-hot representation of the center word and passes it to a hidden layer.
@@ -231,3 +206,49 @@ In conclusion, while one-hot vector representation of words can be useful in pro
                 theta_grad = evaluate_gradient(J, corpus, theta)  
                 theta = theta - alpha * theta_grad
             ```
+
+- **Key points**
+    - Word2Vec is a Bag of Words models i.e. they are the models which don't actually pay any attention to word order or position meaning it doesn't matter if you are next to the center word or a bit further away on the left or right and probability estimate will be the same. 
+    - Word2Vec maximizes objective function by putting similar words nearby in space i.e. similar words forms a cluster. 
+    - According to author, there are two models for Word2Vec i.e. CBOW and Skip-Gram. Skip-Gram model predicts context words given a center word, CBOW model predicts a center word given context words.
+    - The training objective of Word2Vec (Skip Gram) is to learn word vector representations that are good at predicting the nearby/context words. 
+    - For optimization, Word2Vec assume `stochastic gradient descent` which means for each training sample (center word) <i>w<sup>(t)</sup></i> in the corpus of `T` words , one update is made to the weight matrix say(&theta;)
+        - `cost function for stochastic gradient descent`
+        - <img src='images/6.png' width=300>
+        - `cost function for batch gradient descent`
+        - <img src='images/7.png' width=300>
+    - Stochastic gradient descent is preferred over batch gradient descent due to its high computational cost. Since in batch gradient descent one single weight update required processing of the whole corpus, This means computational cost directly proportional to the corpus length.
+    - One of the applications of Word2Vec algorithms is to solve `analgoy tasks`.
+        - Let say we have three words i.e. `nepal`, `capital`, `kathmandu`
+        - Assume, 
+            - vec('nepal') = [0.4, 0.6, 0.2]
+            - vec('capital') = [0.3, 0.5, 0.1]
+            - vec('kathmandu') = [0.6, 0.9, 0.3]
+        - Analgoy, `nepal + capital == kathmandu`
+            - vec('nepal') + vec('capital') = [0.4, 0.6, 0.2] + [0.3, 0.5, 0.1] = [0.7, 1.1, 0.3]
+        - Cosine similarity,
+            - cos(vec('kathmandu'), [0.7, 1.1, 0.3]) = 0.998
+        - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
+
+- **Questions**
+    - Why take natural log in the original objective function of Word2Vec algorithms?
+        - Taking natural log simplifies the original objective function in later obtaining the gradients in the process of optimizing weights
+    - Why use negative log likelhood instead of positive log likelhood in the Word2Vec objective function?
+        - machine learning it's a convention to minimize the objective functions instead of maximizing.
+        - So, maximizing positive log-likelihood is equivalent to minimizing negative log-likelihood.
+        - `Cost function to maximize`
+        - <img src='images/8.png' width='300'>
+        - `Cost function to minimize`
+        - <img src='images/10.png' width='300'>
+        - Where, 
+            - C = window size, 
+            - c = index of context word
+            - t = index of center word
+            - &theta; = concatenated input-to-hidden and hidden-to-output neural network parameters
+            - h = input-to-hidden layer activation
+    - argmax<sub>&theta;</sub> p(x<sub>i</sub>) = argmax<sub>&theta;</sub> ln(p(x<sub>i</sub>)), why?
+        - Taking a log does not affect the optimized weights (&theta;), because natural log is a monotonically increasing function. This means that increasing the value of x-axis results in increasing the value of y-axis. This is important because it ensures that the maximum value of the original probability function occurs at the same point as the log probability function.
+
+
+
+
