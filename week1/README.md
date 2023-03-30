@@ -231,9 +231,9 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
 
 - **Questions**
-    - Why take natural log in the original objective function of Word2Vec algorithms?
+    - `Why take natural log in the original objective function of Word2Vec algorithms?`
         - Taking natural log simplifies the original objective function in later obtaining the gradients in the process of optimizing weights
-    - Why use negative log likelhood instead of positive log likelhood in the Word2Vec objective function?
+    - `Why use negative log likelhood instead of positive log likelhood in the Word2Vec objective function?`
         - machine learning it's a convention to minimize the objective functions instead of maximizing.
         - So, maximizing positive log-likelihood is equivalent to minimizing negative log-likelihood.
         - `Cost function to maximize`
@@ -248,6 +248,18 @@ In conclusion, while one-hot vector representation of words can be useful in pro
             - h = input-to-hidden layer activation
     - argmax<sub>&theta;</sub> p(x<sub>i</sub>) = argmax<sub>&theta;</sub> ln(p(x<sub>i</sub>)), why?
         - Taking a log does not affect the optimized weights (&theta;), because natural log is a monotonically increasing function. This means that increasing the value of x-axis results in increasing the value of y-axis. This is important because it ensures that the maximum value of the original probability function occurs at the same point as the log probability function.
+    - `Why stochastic gradient descent is preferred over gradient descent in Word2Vec training?`
+        - Computationally Efficient:
+            - Assume you have training corpus of millions of words.
+            - So, if you use Batch Gradient Descent, then you need to loop through all of the words in the training corpus for a single weight update. It means time complexity increases with the increase in the size of training corpus.
+            - However, in the case of stochastic gradient descent, it performs weight update by propagating (forward and backward) single word at a time. This means for each single word in the corpus, the weights in the neural network get's updated.
+            - This means, SGD is much more computationally efficient than GD, and network converges faster.
+        -  Better Generaliazation:
+            - The use of stochastic gradient descent can provide better generalization performance as it introduces some level of randomness by randomly selecting training examples at each iteration.
+            - This helps to avoid overfitting and improve the model's ability to generalize to new data.
+    
+
+    
 
 
 
