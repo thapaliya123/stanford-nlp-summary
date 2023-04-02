@@ -258,8 +258,11 @@ In conclusion, while one-hot vector representation of words can be useful in pro
             - The use of stochastic gradient descent can provide better generalization performance as it introduces some level of randomness by randomly selecting training examples at each iteration.
             - This helps to avoid overfitting and improve the model's ability to generalize to new data.  
     - `Why does Skip-Gram model attempt to predict context words given a center word? How does predicting context words help with quantifying words and representing them in a vector space?`
-    
-
+        - Word2Vec algorithms are based on the `distributional hypothesis` which states that words in similar contexts have similar meanings.
+        - Example:
+            - The words "car" and "vehicle" often appear in similar contexts, such as "driving a car" and "driving a vehicle".
+        - By training the Skip-Gram model to predict the context words for a given center word, the model can learn to associate similar words with similar words with similar contexts. 
+        - Thus represents them in a similar area in the vector space.
     
 
 
