@@ -230,7 +230,7 @@ In conclusion, while one-hot vector representation of words can be useful in pro
             - cos(vec('kathmandu'), [0.7, 1.1, 0.3]) = 0.998
         - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
     - Word2Vec (Skip Gram) model actually optimizes weight to reduce the prediction error. Prediction error is the difference between Predicted and True Probability _(y<sub>pred</sub> - y<sub>true</sub>)_
-    - 
+    - For each iteration in the learning process, all weights in _W<sub>output</sub>_ are updated, but only one row vector that corresponds to the center word is updated in _W<sub>input</sub>_.
 
 ## Questions
 - `Why take natural log in the original objective function of Word2Vec algorithms?`
