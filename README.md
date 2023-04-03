@@ -24,6 +24,7 @@
 
 
 ## References 
-- https://jalammar.github.io/illustrated-word2vec/
-- https://web.stanford.edu/class/cs224n/
+- [jalammar The illustrated word2vec](https://jalammar.github.io/illustrated-word2vec/)
+- [Stanforod CS224n](https://web.stanford.edu/class/cs224n/)
 - [Word2Vec paper](https://arxiv.org/abs/1301.3781)
+- [Demystifying neural network in skip gram language modeling](https://aegis4048.github.io/demystifying_neural_network_in_skip_gram_language_modeling)

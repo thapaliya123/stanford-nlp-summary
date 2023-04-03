@@ -263,7 +263,15 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - The words "car" and "vehicle" often appear in similar contexts, such as "driving a car" and "driving a vehicle".
     - By training the Skip-Gram model to predict the context words for a given center word, the model can learn to associate similar words with similar words with similar contexts. 
     - Thus represents them in a similar area in the vector space.
+- `what is prediction error in Word2Vec (Skip-Gram)?`
+    - prediction error is the difference between the predicted and true probability _(y<sub>pred</sub> - y<sub>true</sub>)_
+        - y<sub>pred</sub> is the probability distribution obtained from the final output layer
+        - y<sub>true</sub> is one-hot encoded vector, in which only one element in the vector that corresponds to the c-th context words is 1, and the rest is all 0. 
+    - Skip-Gram model actually optimizes the weight matrix (&theta;) to reduce the prediction error.
+    - Example: when context length c = 1
     
+- `Why Skip-Gram (Negative Sampling) is computationally efficient compared to Vanilla Skip-Gram (using Softmax)`
+
 
 
 
