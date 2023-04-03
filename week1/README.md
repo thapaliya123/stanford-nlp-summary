@@ -229,6 +229,8 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - Cosine similarity,
             - cos(vec('kathmandu'), [0.7, 1.1, 0.3]) = 0.998
         - Since, Cosine similarity is very high, we can conclude that the vector addition of 'nepal' and 'capital' is close to the word 'kathmandu'.
+    - Word2Vec (Skip Gram) model actually optimizes weight to reduce the prediction error. Prediction error is the difference between Predicted and True Probability _(y<sub>pred</sub> - y<sub>true</sub>)_
+    - 
 
 ## Questions
 - `Why take natural log in the original objective function of Word2Vec algorithms?`
@@ -269,7 +271,7 @@ In conclusion, while one-hot vector representation of words can be useful in pro
         - y<sub>true</sub> is one-hot encoded vector, in which only one element in the vector that corresponds to the c-th context words is 1, and the rest is all 0. 
     - Skip-Gram model actually optimizes the weight matrix (&theta;) to reduce the prediction error.
     - Example: when context length c = 1
-    
+
 - `Why Skip-Gram (Negative Sampling) is computationally efficient compared to Vanilla Skip-Gram (using Softmax)`
 
 
